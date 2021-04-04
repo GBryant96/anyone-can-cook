@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anyone Can Cook!</title>
+</head>
+<body>
+    {% for task in tasks %}
+        {{task.dish_name}}<br>
+        {{task.ingredients}}<br>
+        {{task.method}}<br>
+    {% endfor %}
+</body>
+</html>
