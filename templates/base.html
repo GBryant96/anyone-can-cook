@@ -6,10 +6,8 @@
     <title>Anyone Can Cook!</title>
 </head>
 <body>
-    {% for task in tasks %}
-        {{task.dish_name}}<br>
-        {{task.ingredients}}<br>
-        {{task.method}}<br>
-    {% endfor %}
+    <h1>I'm part of the base template</h1>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
