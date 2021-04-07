@@ -25,6 +25,52 @@
                     <label for="ingredients">Ingredients</label>
                 </div>
             </div>
+                  <!-- ingredients -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="method" name="method" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required>
+                        {{- recipe.method -}}
+                    </textarea>
+                    <label for="method">method</label>
+                </div>
+            </div>
+              <!-- picture -->
+            
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Add a picture</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text"> 
+                    </div>
+                </div>
+              
+        <!-- Favorite -->
+                <div class="row">
+				    <div class="input-field col s12">
+                        <div class="switch">
+                                <label for="favorite">
+                    <input type="checkbox" id="favorite" name="favorite">
+                    <span class="lever"></span>
+                    Favorite
+                </label>
+                        </div>
+                    </div>
+                </div>
+        <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    Add Recipe <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
         </form>
     </div>
 
