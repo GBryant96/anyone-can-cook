@@ -123,19 +123,25 @@ def edit_recipe(recipe_id):
     if request.method == "POST":
         favorite = "on" if request.form.get("favorite") else "off"
         submit = {
-            "name": request.form.get("name"),
+            "name ": request.form.get("name"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
-            "image": request.form.get("image"),
             "favorite": favorite,
+            "image": request.form.get("image"),
             "created_by": session["user"]
         }
         mongo.db.recipe.update({"_id": ObjectId(recipe_id)}, submit)
-        flash("Recipe Successfully Updated")
+        flash("recipe Successfully Updated")
 
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)
-   
+
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipe.remove({"_id": ObjectId(recipe_id)})
+    flash("recipe Successfully Deleted")
+    return redirect(url_for("get_recipe"))
    
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
