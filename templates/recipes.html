@@ -1,12 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
-       {% for recipe in recipes %}
-        {{ recipe.name }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.method }}<br>
-    {% endfor %}
+    <!-- Modal Trigger -->
+    {% for recipe in recipes %}
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">{{ recipe.name }}</a>
 
+        <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        
+            <div class="modal-content">
+                
+                <p>{{ recipe.ingredient }}</p>
+            
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        {% endfor %}
+    </div>          
+            
 {% endblock %}
+
+
 
  
