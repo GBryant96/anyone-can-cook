@@ -4,7 +4,7 @@
     {% for recipe in recipes %}
 
     {{ recipe.name }}
-    {{ recipe.ingredient }}
+    {{ recipe.ingredients }}
     {% endfor %}
     <!-- Modal Trigger -->
     {% for recipe in recipes %}
@@ -15,22 +15,16 @@
         
             <div class="modal-content">
                 
-                <p></p>
+                <p>{{ recipe.ingredients }}</p>
             
             </div>
             <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
             </div>
-               <script>
-        $(document).ready(function(){
-        $('.modal').modal();
-        });
-    </script>
     </div>      
         {% endfor %}
  
-    
-            
+      
 {% endblock %}
 
 

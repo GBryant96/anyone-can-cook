@@ -1,50 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-4 center-align">Add Task</h3>
-
+    <h3 class="light-blue-text text-darken-4 center-align">Add Recipe</h3>
+    <!-- dish name -->
     <div class="row">
         <form class="col s12" method="POST" action="">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <div class="row">
+                    <div class="input-field col s12">
+            <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
                     <input id="name" name="name" type="text" class="validate">
                     <label for="name">Dish Name</label>
                 </div>
             </div>
-        <!-- submit button -->
+        <!-- ingrdients -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-list prefix light-blue-text text-darken-4"></i>
-                    <label for="textarea1">Ingredients</label>
-                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" required></textarea>
+                    <label for="ingredients">Ingredients</label>
                 </div>
             </div>
-         <!-- submit button -->
+         <!-- method -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-list-ol prefix light-blue-text text-darken-4"></i>
-                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                    <label for="textarea1">Method</label>
+                    <textarea id="method" name="method" class="materialize-textarea"></textarea>
+                    <label for="method">Method</label>
                 </div>
             </div>
-        <!-- submit button -->
-            <div class="file-field input-field">
-                <div class="btn">
-                    <span>Add a picture</span>
-                    <input type="file">
+        <!-- picture -->
+            
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Add a picture</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text"> 
+                    </div>
                 </div>
-                <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-                </div>
-            </div>
-        <!-- submit button -->
-            <div class="switch">
-                <label>
-                    <input type="checkbox">
+              
+        <!-- Favorite -->
+                <div class="row">
+				    <div class="input-field col s12">
+                        <div class="switch">
+                                <label for="favorite">
+                    <input type="checkbox" id="favorite" name="favorite">
                     <span class="lever"></span>
                     Favorite
                 </label>
+                        </div>
+                    </div>
+                </div>
         <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
@@ -53,7 +60,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
 {% endblock %}
