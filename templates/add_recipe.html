@@ -11,46 +11,49 @@
                     <input id="name" name="name" type="text" class="validate">
                     <label for="name">Dish Name</label>
                 </div>
+            </div>
+        <!-- submit button -->
+            <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-edit prefix light-blue-text text-darken-4"></i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">Author</label>
+                    <i class="fas fa-list prefix light-blue-text text-darken-4"></i>
+                    <label for="textarea1">Ingredients</label>
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
                 </div>
             </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-list prefix light-blue-text text-darken-4"></i>
-                <label for="textarea1">Ingredients</label>
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                
+         <!-- submit button -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-list-ol prefix light-blue-text text-darken-4"></i>
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Method</label>
+                </div>
+            </div>
+        <!-- submit button -->
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Add a picture</span>
+                    <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+                </div>
+            </div>
+        <!-- submit button -->
+            <div class="switch">
+                <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                    Favorite
+                </label>
+        <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    Add Recipe <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-list-ol prefix light-blue-text text-darken-4"></i>
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Method</label>
-            </div>
-        </div>
-        <div class="file-field input-field">
-      <div class="btn">
-        <span>Add a picture</span>
-        <input type="file">
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
-      </div>
-    </div>
-          <div class="switch">
-    <label>
-      <input type="checkbox">
-      <span class="lever"></span>
-      Favorite
-    </label>
-  </div>
-
-    </form>
-        </form>
     </div>
 
 {% endblock %}
