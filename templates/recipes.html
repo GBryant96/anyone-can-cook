@@ -1,11 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
-    {% for recipe in recipes %}
-
-    {{ recipe.name }}
-    {{ recipe.ingredients }}
-    {% endfor %}
     <!-- Modal Trigger -->
     {% for recipe in recipes %}
     <a class="waves-effect waves-light btn modal-trigger" href="#modal{{loop.index}}">{{ recipe.name }}</a>
@@ -14,8 +8,24 @@
     <div id="modal{{loop.index}}" class="modal">
         
             <div class="modal-content">
-                
-                <p>{{ recipe.ingredients }}</p>
+                            
+                    <h2>{{ recipe.name }}</h2>
+                <div>        
+                    <ul>
+                        <h4>Ingredients</h4>
+                        {% for ingredient in recipe.ingredients %}
+                        <li id="recipe{{loop.index}}">{{ ingredient }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div>        
+                    <ol>
+                        <h4>Method</h4>
+                        {% for method in recipe.method %}
+                        <li id="method{{loop.index}}">{{ method }}</li>
+                        {% endfor %}
+                    </ol>
+                </div>            
             
             </div>
             <div class="modal-footer">

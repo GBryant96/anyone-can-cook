@@ -66,12 +66,9 @@
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
                     Save Changes <i class="fas fa-plus-square right"></i>
                     </button>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-large red accent-4">Delete Recipe</a>
                 </div>
             </div>
         </form>
     </div>
-
-        </form>
-    </div>
-
 {% endblock %}
