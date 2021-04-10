@@ -10,13 +10,15 @@
             <div class="modal-content">
                             
                     <h2>{{ recipe.name }}</h2>
-                <div>        
-                    <ul>
-                        <h4>Ingredients</h4>
-                        {% for ingredient in recipe.ingredients %}
-                        <li id="recipe{{loop.index}}">{{ ingredient }}</li>
-                        {% endfor %}
-                    </ul>
+                <div class="row">
+                    <div class="col-s8 offset-s2">
+                        <ul>
+                            <h4>Ingredients</h4>
+                            {% for ingredient in recipe.ingredients %}
+                            <li id="recipe{{loop.index}}">{{ ingredient }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
                 <div>        
                     <ol>
