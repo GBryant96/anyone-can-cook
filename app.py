@@ -104,13 +104,13 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        favorite = "on" if request.form.get("favorite") else "off"
+        vegetarian = "on" if request.form.get("vegetarian") else "off"
         recipe = {
             "name": request.form.get("name"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
             "image": request.form.get("image"),
-            "favorite": favorite,
+            "vegetarian": vegetarian,
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -123,12 +123,12 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-        favorite = "on" if request.form.get("favorite") else "off"
+        vegetarian = "on" if request.form.get("vegetarian") else "off"
         submit = {
             "name ": request.form.get("name"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
-            "favorite": favorite,
+            "vegetarian": vegetarian,
             "image": request.form.get("image"),
             "created_by": session["user"]
         }
@@ -136,7 +136,11 @@ def edit_recipe(recipe_id):
         flash("recipe Successfully Updated")
 
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("edit_recipe.html", recipe=recipe)
+    name = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    ingredients = mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
+    method = mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("edit_recipe.html", recipe=recipe,
+        name=name, ingredients=ingredients, method=method)
 
 
 @app.route("/delete_recipe/<recipe_id>")
