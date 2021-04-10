@@ -10,12 +10,12 @@
             <div class="modal-content">
                             
                     <h2>{{ recipe.name }}</h2>
-                <div>
+                <div style="margin-left: 27px;">
                     <div>
                         <ul>
-                            <h4>Ingredients</h4>
+                            <h4 style="margin-left: 18px;">Ingredients</h4>
                             {% for ingredient in recipe.ingredients %}
-                            <li id="recipe{{loop.index}}">{{ ingredient }}</li>
+                            <li style="list-style-position: inside; list-style-type: circle;" id="recipe{{loop.index}}">{{ ingredient }}</li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -24,7 +24,7 @@
                     <ol>
                         <h4>Method</h4>
                         {% for method in recipe.method %}
-                        <li id="method{{loop.index}}">{{ method }}</li>
+                        <li style="list-style-position: outside; padding-left: 8px;" id="method{{loop.index}}">{{ method }}</li>
                         {% endfor %}
                     </ol>
                 </div>            
