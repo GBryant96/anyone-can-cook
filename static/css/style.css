@@ -1,3 +1,6 @@
-ul.ing {
-  list-style-position: outside;
+ul {
+  padding-left: 27px;
+}
+ul h4 {
+    padding-left: 27px;
 }
