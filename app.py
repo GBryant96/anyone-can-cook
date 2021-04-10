@@ -136,11 +136,9 @@ def edit_recipe(recipe_id):
         flash("recipe Successfully Updated")
 
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    name = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    ingredients = mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
-    method = mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe,
-        name=name, ingredients=ingredients, method=method)
+        categories=categories)
 
 
 @app.route("/delete_recipe/<recipe_id>")
