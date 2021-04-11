@@ -22,7 +22,7 @@
                         class="materialize-textarea validate" required>
                         {{- recipe.ingredients|join(',') -}}
                     </textarea>
-                    <label for="ingredients">Ingredients</label>
+                    <label for="ingredients">Ingredients. Seperate items with , please refrain from using , within the item</label>
                 </div>
             </div>
                   <!-- ingredients -->
@@ -33,7 +33,7 @@
                         class="materialize-textarea validate" required>
                         {{- recipe.method|join('.') -}}
                     </textarea>
-                    <label for="method">method</label>
+                    <label for="method">Method.  Seperate items with . please refrain from using . within the item</label>
                 </div>
             </div>
               <!-- picture -->
@@ -44,6 +44,7 @@
                         <input type="file">
                     </div>
                     <div class="file-path-wrapper">
+                        <label for="image">Broken Link</label>
                         <input class="file-path validate" type="text"> 
                     </div>
                 </div>
