@@ -125,20 +125,18 @@ def edit_recipe(recipe_id):
     if request.method == "POST":
         vegetarian = "on" if request.form.get("vegetarian") else "off"
         submit = {
-            "name ": request.form.get("name"),
+            "name": request.form.get("name"),
             "ingredients": request.form.get("ingredients"),
-            "method": request.form.get("method"),
             "vegetarian": vegetarian,
-            "image": request.form.get("image"),
+            "method": request.form.get("method"),
             "created_by": session["user"]
         }
-        mongo.db.recipe.update({"_id": ObjectId(recipe_id)}, submit)
-        flash("recipe Successfully Updated")
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        flash("Recipe Successfully Updated")
 
-    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_recipe.html", recipe=recipe,
-        categories=categories)
+    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
 
 @app.route("/delete_recipe/<recipe_id>")
