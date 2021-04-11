@@ -104,13 +104,11 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        vegetarian = "on" if request.form.get("vegetarian") else "off"
         recipe = {
             "name": request.form.get("name"),
             "ingredients": request.form.get("ingredients").split(','),
-            "method": request.form.get("method").split(','),
+            "method": request.form.get("method").split('.'),
             "image": request.form.get("image"),
-            "vegetarian": vegetarian,
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -123,12 +121,10 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-        vegetarian = "on" if request.form.get("vegetarian") else "off"
         submit = {
             "name": request.form.get("name"),
             "ingredients": request.form.get("ingredients").split(","),
-            "method": request.form.get("method").split(','),
-            "vegetarian": vegetarian,
+            "method": request.form.get("method").split('.'),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
@@ -143,7 +139,7 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipe.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
-    return redirect(url_for("get_recipe"))
+    return redirect(url_for("get_recipes"))
 
 
 if __name__ == "__main__":

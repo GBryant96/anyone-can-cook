@@ -2,12 +2,12 @@
 {% block content %}
     <!-- Modal Trigger -->
     {% for recipe in recipes %}
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal{{loop.index}}">{{ recipe.name }}</a>
+    <a style="margin: 30px"class="waves-effect waves-light btn modal-trigger" href="#modal{{loop.index}}">{{ recipe.name }}</a>
 
         <!-- Modal Structure -->
     <div id="modal{{loop.index}}" class="modal">
         
-            <div class="modal-content">
+            <div class="modal-content" >
                             
                     <h2 style="text-align: center;">{{ recipe.name }}</h2>
                 <div style="margin-left: 27px;">
