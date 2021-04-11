@@ -107,8 +107,8 @@ def add_recipe():
         vegetarian = "on" if request.form.get("vegetarian") else "off"
         recipe = {
             "name": request.form.get("name"),
-            "ingredients": request.form.get("ingredients"),
-            "method": request.form.get("method"),
+            "ingredients": request.form.get("ingredients").split(','),
+            "method": request.form.get("method").split(','),
             "image": request.form.get("image"),
             "vegetarian": vegetarian,
             "created_by": session["user"]
@@ -126,9 +126,9 @@ def edit_recipe(recipe_id):
         vegetarian = "on" if request.form.get("vegetarian") else "off"
         submit = {
             "name": request.form.get("name"),
-            "ingredients": request.form.get("ingredients"),
+            "ingredients": request.form.get("ingredients").split(","),
+            "method": request.form.get("method").split(','),
             "vegetarian": vegetarian,
-            "method": request.form.get("method"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
