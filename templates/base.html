@@ -38,6 +38,7 @@
   
     <!-- mobile sidenav -->
             <ul class="sidenav" id="mobile-demo">
+                <li><h4 class="center-align light-blue-text text-darken 4">Anyone Can Cook!</h4></li>
                 <li><a href="{{ url_for('get_recipes') }}"><img src="../static/images/logo.jpg"></a></li>
                 {% if session.user %}
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -47,7 +48,9 @@
                 <li><a href="{{ url_for('register') }}">Register</a></li>
                 {% endif %}
             </ul>
-    </header>
+    
+        </header>
+
 
 
 <section>

@@ -1,45 +1,146 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1>MP project3 - Anyone Can Cook! </h1>
 
-Welcome GBryant96,
+<h2>UX</h2>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+<h3> Project Goals</h3>
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+'Anyone Can Cook' is a recipe sharing site inspired by the Disney film 'Ratatouille' and the book from the film 'Anyone Can Cook'. The idea behind the site is to build a library of recipes from user input, from professional to family cooks, to share ideas and help budding cooks and veterans learn and improve.
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Using a Disney theming helps the site feel welcoming to everyone, and using a clear structure that isn't over packed with graphics means that someone quickly trying to access the information won't get stuck trying to find what they're looking for, also a user that isn't too comfortable with the internet will still be able to use the site with ease.
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<h3> Developer Goals</h3>
 
-## Updates Since The Instructional Video
+My main goals when developing this application were:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+<ul><li>To build an easy to access library of recipes </li>
+    <li>To allow users to add their own recipes and edit their own recipes</li>
+    <li>To allow users or an admin to delete a recipe, given permissions</li>
+    <li>Have a clear and accessible UX to help make the site welcoming</li>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+​    
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+<h3> User Goals</h3>
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<ul>
+    <li>Easially find the login/register buttons fromt the landing page</li>
+    <li>Easilly be able to add and edit my own recipes </li>
+    <li>To be able to navigate the site easially and find recipes</li>
+</ul>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
---------
+<h3>Features</h3>
 
-Happy coding!
+<ul>
+    <li>Account Creation to allow creation of recepies and give permissions to update and delete</li>
+    <li>Easy to use add and edit forms allowing users to easily add recipes</li>
+    <li>using an external database, mongodb, to store the information from the recipes</li>
+</ul>
+
+
+
+<h4> Future Features</h4>
+
+<ul><li>
+    Add the ability to save pictures to each object (currently broken link)
+    </li>
+    <li>Search bar to search for recipes</li>
+    <li>Use image instead of name on the modal button</li>
+    <li>ability to add 'favorite' recipes to profile</li>
+
+
+<h2>Technologies Used
+</h2>
+
+- Git and Github
+  - Used for storage and version conrol
+- Gitpod
+  - Used to write the code
+- Typora
+  - used to write my README in markdown
+- Balsamiq
+  - Used to build wireframes
+- Heroku
+  - Used for deployment
+- MongoDB
+  - Used to build the database that the data is stored in
+- Materilaize
+  - Used for custom html, css and js
+- Fontawesome
+  - Used for icons
+- Jinja, flask, werkzeug
+  - Used to simplify writing code
+
+
+
+<h3>Testing </h3>
+
+1. Adding Recipe
+
+   Tried to submit empty form, where flash message popped up requesting forms to be filled
+
+   Changing Ingredient and Method storage within mongodb to arrays, upon entry, each character was saved as a single object. added split function for '.' and ',' as to be able to add objects as intended
+
+
+
+
+
+
+
+
+
+<h3></h3>
+
+<h3>Responsiveness</h3>
+
+Mobile
+
+On mobile, currently, no buttons are visible. currently investigating solutions
+
+
+
+
+
+<h3>Deployment</h3>
+
+I used Heroku to deploy my project, automatically updating when code is pushed to my github repository
+
+
+
+<h3>Credits</h3>
+
+<h4>Content</h4>
+
+- Sample recipes from allears.net
+- disney logo property of the disney corporation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
